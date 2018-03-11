@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-10 col-md-10 mx-auto">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th class="col-sm-2 col-md-2">Method</th>
+                        <th>URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td><h4><span class="badge badge-pill badge-success">GET</span></h4></td>
+                        <td>
+                            <div class="card">
+                                <div class="card-header" role="tab" id="heading1">
+                                    <h5 class="mb-0">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                            { url }/user/token
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapse1" class="collapse" role="tabpanel" aria-labelledby="heading1">
+                                    <div class="card-block">
+                                        <div class="col-sm-12 col-md-12">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                <tr>
+                                                    <th class="col-sm-3 col-md-3">Input</th>
+                                                    <th>Output</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>Username</td>
+                                                    <td rowspan="2">
+                                                        <code>
+                                                            { <var>"token"</var> : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9" }
+                                                        </code>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Password</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><h4><span class="badge badge-pill badge-warning">POST</span></h4></td>
+                        <td>
+                            <div class="card">
+                                <div class="card-header" role="tab" id="heading2">
+                                    <h5 class="mb-0">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                            { url }/user/create
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapse2" class="collapse" role="tabpanel" aria-labelledby="heading2">
+                                    <div class="card-block">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                            <tr>
+                                                <th>Input</th>
+                                                <th>Header</th>
+                                                <th>Admin</th>
+                                                <th>Output</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>
+                                                    <code>
+                                                        { <var>"name"</var>: "user name",<br> <var>"password"</var>: "user password" }
+                                                    </code>
+                                                </td>
+                                                <td>x-access-token</td>
+                                                <td>True</td>
+                                                <td>
+                                                    <code>
+                                                    {<br>
+                                                        <var>"message"</var>: "New user created!"<br>
+                                                    }
+                                                    </code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><h4><span class="badge badge-pill badge-success">GET</span></h4></td>
+                        <td>
+                            <div class="card">
+                                <div class="card-header" role="tab" id="heading3">
+                                    <h5 class="mb-0">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                            { url }/user/token/verify
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapse3" class="collapse" role="tabpanel" aria-labelledby="heading3">
+                                    <div class="card-block">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                            <tr>
+                                                <th>Header</th>
+                                                <th>Value</th>
+                                                <th>Output</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>x-access-token</td>
+                                                <td>
+                                                    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+                                                </td>
+                                                <td>
+                                                    <code>
+                                                    {<br>
+                                                        &ensp;<var>"user"</var>: {<br>
+                                                        &ensp;&ensp;<var>"admin"</var>: true,<br>
+                                                        &ensp;&ensp;<var>"name"</var>: "user1",<br>
+                                                        &ensp;&ensp;<var>"password"</var>: "user_pass(encoded)",<br>
+                                                        &ensp;&ensp;<var>"public_id"</var>: "id(encoded)"<br>
+                                                        &ensp;}<br>
+                                                    }
+                                                    </code>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><h4><span class="badge badge-pill badge-success">GET</span></h4></td>
+                        <td>
+                            <div class="card">
+                                <div class="card-header" role="tab" id="heading4">
+                                    <h5 class="mb-0">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                            { url }/user/ ( public_id )
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapse4" class="collapse" role="tabpanel" aria-labelledby="heading4">
+                                    <div class="card-block">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                            <tr>
+                                                <th>Header</th>
+                                                <th>Value</th>
+                                                <th>Admin</th>
+                                                <th>Output</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>x-access-token</td>
+                                                <td>
+                                                    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+                                                <td>True</td>
+                                                <td>
+                                                    <code>
+                                                    {<br>
+                                                        &ensp;<var>"user":</var> {<br>
+                                                        &ensp;<var>"admin"</var>: true,<br>
+                                                        &ensp;<var>"name"</var>: "user1",<br>
+                                                        &ensp;<var>"password"</var>: "user pass(encoded)",<br>
+                                                        &ensp;<var>"public_id"</var>: "id(encoded)"<br>
+                                                        &ensp;}<br>
+                                                    }
+                                                    </code>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><h4><span class="badge badge-pill badge-success">GET</span></h4></td>
+                        <td>
+                            <div class="card">
+                                <div class="card-header" role="tab" id="heading5">
+                                    <h5 class="mb-0">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                            { url }/user/all
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapse5" class="collapse" role="tabpanel" aria-labelledby="heading5">
+                                    <div class="card-block">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                            <tr>
+                                                <th>Header</th>
+                                                <th>Value</th>
+                                                <th>Output</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>x-access-token</td>
+                                                <td>
+                                                    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+                                                </td>
+                                                <td>
+                                                    <code>
+                                                    {<br>
+                                                        &ensp;<var>"all_users"</var>: [<br>
+                                                        &ensp;&ensp;{<br>
+                                                        &ensp;&ensp;<var>"admin"</var>: true,<br>
+                                                        &ensp;&ensp;<var>"name"</var>: "user1",<br>
+                                                        &ensp;&ensp;<var>"password"</var>: "sha256$QopjZvwr$823f02bc24ae3c9",<br>
+                                                        &ensp;&ensp;<var>"public_id"</var>: "cf43fb59-a784-4bdf-b00f-67b579460fcd"<br>
+                                                        &ensp;&ensp;},<br>
+                                                        &ensp;&ensp;{<br>
+                                                        &ensp;&ensp;<var>"admin"</var>: false,<br>
+                                                        &ensp;&ensp;<var>"name"</var>: "user2",<br>
+                                                        &ensp;&ensp;<var>"password"</var>: "sha256$JOvcLiig$ca036d673e330b65",<br>
+                                                        &ensp;&ensp;<var>"public_id"</var>: "9ea36d1f-b0fe-40e4-9584-7f25bf71865b"<br>
+                                                        &ensp;&ensp;}<br>
+                                                        &ensp;]<br>
+                                                    }
+                                                    </code>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><h4><span class="badge badge-pill badge-primary">PUT</span></h4></td>
+                        <td>
+                            <div class="card">
+                                <div class="card-header" role="tab" id="heading6">
+                                    <h5 class="mb-0">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                                            { url }/user/admin/ ( public_id )
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapse6" class="collapse" role="tabpanel" aria-labelledby="heading6">
+                                    <div class="card-block">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                            <tr>
+                                                <th>Header</th>
+                                                <th>Value</th>
+                                                <th>Admin</th>
+                                                <th>Output</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>x-access-token</td>
+                                                <td>
+                                                    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+                                                </td>
+                                                <td>True</td>
+                                                <td>
+                                                    <code>
+                                                    {<br>
+                                                        &ensp;<var>"message"</var>: "user has been promoted". <br>
+                                                    }
+                                                    </code>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><h4><span class="badge badge-pill badge-danger">DELETE</span></h4></td>
+                        <td>
+                            <div class="card">
+                                <div class="card-header" role="tab" id="heading7">
+                                    <h5 class="mb-0">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                                            { url }/user/delete/ ( public_id )
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapse7" class="collapse" role="tabpanel" aria-labelledby="heading7">
+                                    <div class="card-block">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                            <tr>
+                                                <th>Header</th>
+                                                <th>Value</th>
+                                                <th>Admin</th>
+                                                <th>Output</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>x-access-token</td>
+                                                <td>
+                                                    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+                                                </td>
+                                                <td>True</td>
+                                                <td>
+                                                    <code>
+                                                        {<br>
+                                                        &ensp;<var>"message"</var>: "user has been deleted". <br>
+                                                        }
+                                                    </code>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="js/jquery-3.2.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
